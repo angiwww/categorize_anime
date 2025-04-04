@@ -3,7 +3,14 @@ import shutil
 import logging
 
 # Set up logging configuration
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("video_processing.log"),  # Save logs to a file
+        logging.StreamHandler()  # Print logs to console
+    ]
+)
 logger = logging.getLogger()
 
 # Enter your directories for files
